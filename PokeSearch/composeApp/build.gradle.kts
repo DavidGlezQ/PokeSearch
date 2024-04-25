@@ -31,6 +31,7 @@ kotlin {
         androidMain.dependencies {
             implementation(libs.compose.ui.tooling.preview)
             implementation(libs.androidx.activity.compose)
+            implementation(libs.ktor.client.okhttp)
         }
         commonMain.dependencies {
             implementation(compose.runtime)
@@ -43,7 +44,8 @@ kotlin {
             //Lottie
             implementation(libs.lottie)
 
-            //Ktor - Consume retrofit
+            //Ktor - Consume service
+            implementation(libs.ktor.client.core)
 
             //Koin - DI
             implementation(libs.koin.core)
@@ -52,9 +54,14 @@ kotlin {
 
             //Fonts
 
-            //Voyager - Navigation
+            //Voyager - Navigation - viewModel
             implementation(libs.voyager.navigator)
             implementation(libs.voyager.transitions)
+            implementation(libs.voyager.screenModel)
+
+            //Coroutines
+            implementation(libs.ktor.client.core)
+            implementation(libs.kotlinx.coroutines.core)
         }
     }
 }
@@ -90,6 +97,7 @@ android {
     }
     dependencies {
         debugImplementation(libs.compose.ui.tooling)
+        implementation(libs.kotlinx.coroutines.android)
     }
 }
 
