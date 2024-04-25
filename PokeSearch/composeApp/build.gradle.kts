@@ -48,9 +48,8 @@ kotlin {
             implementation(libs.ktor.client.core)
 
             //Koin - DI
+            implementation(project.dependencies.platform(libs.koin.bom))
             implementation(libs.koin.core)
-
-            //MVVM - ViewModel - Koin
 
             //Fonts
 
@@ -62,6 +61,9 @@ kotlin {
             //Coroutines
             implementation(libs.ktor.client.core)
             implementation(libs.kotlinx.coroutines.core)
+
+            //Serialization
+            implementation(libs.kotlinx.serialization)
         }
     }
 }
